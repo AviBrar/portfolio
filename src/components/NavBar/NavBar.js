@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../../assets/imgs/logo.svg";
+import aviLogo from "../../assets/imgs/Avi-logo.svg";
 import navIcon1 from "../../assets/imgs/nav-icon1.svg";
 import navIcon2 from "../../assets/imgs/nav-icon2.svg";
 import navIcon3 from "../../assets/imgs/nav-icon3.svg";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
+import "./NavBar.scss";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
@@ -34,7 +36,7 @@ export const NavBar = () => {
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            <img src={logo} alt="Logo" />
+            <img className="nav__logo" src={aviLogo} alt="Logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
