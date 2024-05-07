@@ -1,44 +1,69 @@
 import "./Projects.scss";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "../ProjectCard/ProjectCard";
-import projImg1 from "../../assets/imgs/project-img1.png";
-import projImg2 from "../../assets/imgs/project-img2.png";
-import projImg3 from "../../assets/imgs/project-img3.png";
+import projImg1 from "../../assets/imgs/home.png";
+import projImg2 from "../../assets/imgs/nav-bar.png";
+import projImg3 from "../../assets/imgs/add-league.png";
+import projImg4 from "../../assets/imgs/warehouses.png";
+import projImg5 from "../../assets/imgs/inventory.png";
+import projImg6 from "../../assets/imgs/search-inv.png";
+import projImg7 from "../../assets/imgs/chatbox-main.png";
+import projImg8 from "../../assets/imgs/chatbox.png";
+import projImg9 from "../../assets/imgs/chatbox-q.png";
 import colorSharp2 from "../../assets/imgs/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
-  const projects = [
+  const project1 = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Home Page",
+      description: "Displaying all leagues allows CRUD operations.",
       imgUrl: projImg1,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Nav Bar",
+      description: "Animated with css and tailwind",
       imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "League Registration",
+      description: "Submits an API post request to add a new league.",
       imgUrl: projImg3,
     },
+  ];
+  const project2 = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Warehouses Page",
+      description: "Displaying all warehouses from backend.",
+      imgUrl: projImg4,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg2,
+      title: "Inventory Page",
+      description: "Displaying all inventory items from backend.",
+      imgUrl: projImg5,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg3,
+      title: "Inventory Search",
+      description: "Displays search results from backend.",
+      imgUrl: projImg6,
+    },
+  ];
+  const project3 = [
+    {
+      title: "Chatbutton Main Page",
+      description: "Able to be elegantely integrated into any website.",
+      imgUrl: projImg7,
+    },
+    {
+      title: "Chatbox",
+      description: "Powered by OpenAI and tailored for the vendors needs.",
+      imgUrl: projImg8,
+    },
+    {
+      title: "Customers asking questions",
+      description: "Any question can be asked and answered by the chatbot.",
+      imgUrl: projImg9,
     },
   ];
 
@@ -87,28 +112,32 @@ export const Projects = () => {
                     >
                       <Tab.Pane eventKey="first">
                         <Row>
-                          {projects.map((project, index) => {
+                          {project1.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
+                        <div className="project__links">
+                          <a href="https://github.com/AviBrar/avi-brar-capstone-client">
+                            GitHub Repository Client
+                          </a>
+                          <a href="https://github.com/AviBrar/avi-brar-capstone-server">
+                            GitHub Repository Server
+                          </a>
+                        </div>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">
+                        <Row>
+                          {project2.map((project, index) => {
                             return <ProjectCard key={index} {...project} />;
                           })}
                         </Row>
                       </Tab.Pane>
-                      <Tab.Pane eventKey="second">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
-                      </Tab.Pane>
                       <Tab.Pane eventKey="third">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Cumque quam, quod neque provident velit, rem
-                          explicabo excepturi id illo molestiae blanditiis,
-                          eligendi dicta officiis asperiores delectus quasi
-                          inventore debitis quo.
-                        </p>
+                        <Row>
+                          {project3.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
