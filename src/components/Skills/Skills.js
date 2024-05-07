@@ -1,11 +1,6 @@
 import "./Skills.scss";
-import meter1 from "../../assets/imgs/meter1.svg";
-import meter2 from "../../assets/imgs/meter2.svg";
-import meter3 from "../../assets/imgs/meter3.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import arrow1 from "../../assets/imgs/arrow1.svg";
-import arrow2 from "../../assets/imgs/arrow2.svg";
 import colorSharp from "../../assets/imgs/color-sharp.png";
 
 export const Skills = () => {
@@ -250,7 +245,11 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-      <img className="background-image-left" src={colorSharp} alt="Image" />
+      <img
+        className="background-image-left"
+        src={colorSharp}
+        alt="Background"
+      />
     </section>
   );
 };
