@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../../assets/imgs/logo.svg";
 import aviLogo from "../../assets/imgs/Avi-logo.svg";
 import navIcon1 from "../../assets/imgs/nav-icon1.svg";
 import navIcon2 from "../../assets/imgs/nav-icon2.svg";
