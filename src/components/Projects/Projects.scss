@@ -1,3 +1,21 @@
 .project__text{
     text-align: start !important;
 }
+
+.project {
+    & a{
+        text-decoration: none;
+        color: #B8B8B8;
+    }
+    & a:first-child{
+        margin-right: 3rem;
+    }
+    & a:hover{
+        color: #fff;
+    }
+    &__links{
+        display: flex;
+        justify-content: center;
+    }
+    
+}
