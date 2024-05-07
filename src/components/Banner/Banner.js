@@ -4,6 +4,7 @@ import headerImg from "../../assets/imgs/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import { HashLink } from "react-router-hash-link";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -11,7 +12,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+  const toRotate = ["Software Engineer", "Web Developer", "AI Engineer"];
   const period = 2000;
 
   useEffect(() => {
@@ -65,23 +66,25 @@ export const Banner = () => {
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
-                    {`Hi! I'm Judy`}{" "}
+                    {`Hi! I'm Avi Brar`}{" "}
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
-                      data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'
+                      data-rotate='[ "Software Engineer", "Web Developer", "AI Engineer" ]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
+                    Hello! I'm an eager junior developer with a passion for
+                    crafting innovative digital solutions. My journey in web
+                    development spans front-end and back-end technologies, with
+                    expertise in HTML, CSS, JavaScript, React, and Node.js. I am
+                    committed to learning and growing with each project, staying
+                    abreast of industry trends, and embracing challenges. Let's
+                    code something extraordinary together!
                   </p>
-                  <button onClick={() => console.log("connect")}>
+                  <button onClick={() => (window.location = "#connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />
                   </button>
                 </div>
