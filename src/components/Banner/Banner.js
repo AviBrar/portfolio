@@ -49,7 +49,7 @@ export const Banner = () => {
     return () => {
       clearInterval(ticker);
     };
-  }, [text, delta, tick]);
+  }, [text, delta]);
 
   return (
     <section className="banner" id="home">
