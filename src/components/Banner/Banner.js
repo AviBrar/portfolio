@@ -4,6 +4,7 @@ import moose from "../../assets/imgs/moose.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import { useCallback } from "react";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -11,10 +12,10 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   // const [index, setIndex] = useState(1);
-  const toRotate = ["Software Engineer", "Web Developer", "AI Engineer"];
   const period = 2000;
 
-  const tick = () => {
+  const tick = useCallback(() => {
+    const toRotate = ["Software Engineer", "Web Developer", "AI Engineer"];
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
     let updatedText = isDeleting
@@ -29,27 +30,21 @@ export const Banner = () => {
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      // setIndex((prevIndex) => prevIndex - 1);
       setDelta(period);
     } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      // setIndex(1);
       setDelta(500);
-    } else {
-      // setIndex((prevIndex) => prevIndex + 1);
     }
-  };
+  }, [loopNum, isDeleting, text, period]); // Dependencies of `tick`
 
   useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
+    let ticker = setInterval(tick, delta);
 
     return () => {
       clearInterval(ticker);
     };
-  }, [text, delta]);
+  }, [delta, tick]); // Now `tick` can safely be a dependency
 
   return (
     <section className="banner" id="home">
